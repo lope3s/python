@@ -36,7 +36,7 @@ object drops to zero, the allocated memory will be reclaimed.
 print("""Object Identity:
 Every object that is created is given a number that uniquely identifies it. it
 is guaranteed that no two objects will have the same identifier during any
-priod in which their lifetimes overlap.
+period in which their lifetimes overlap.
 
 The id() function returns an object's identifier:""")
 

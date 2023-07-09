@@ -14,7 +14,7 @@ print("""
 Concatenating immutable objects always results in a new object.
 This means that building up a sequence by repeated concatenation
 will have a quadratic runtime cost in the total sequence lenght.
-Immutable objects: str, bytes, typle, etc
+Immutable objects: str, bytes, tuple, etc
 """)
 
 print("list1 * 3 ==", list1 * 3)
