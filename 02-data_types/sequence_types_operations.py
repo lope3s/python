@@ -1,3 +1,5 @@
+from collections import namedtuple
+
 list1 = [1, 2]
 print("list1 ==", list1)
 
@@ -69,5 +71,57 @@ print("list1_cousing ==", list1_cousing)
 
 print("list1 == list1_cousing:", list1 == list1_cousing)  # False
 
-# contine from here:
-# https://docs.python.org/3/library/stdtypes.html#mutable-sequence-types
+# Mutable sequence operations:
+list4 = [1, 2, 3, 4, 5]
+
+print("list4", list4)
+
+list4.insert(1, 0)
+
+print("list4.insert(1, 0), list4:", list4)
+
+list4.pop(1)
+
+print("list4.pop(1), list4:", list4)
+
+list4.reverse()
+
+print("list4.reverse(), list4:", list4)
+
+print("""Lists:
+Are mutable sequencies, typically used to store collections of similar items
+""")
+
+print("""Tuples:
+Are immutable sequences, typically used to store collections of different data.
+Tuples are also used for cases where an immutable sequence of similar data is
+needed (such as allowing storage in a set or dict instance).
+""")
+print("""Note that it's actually the comma which makes a tuple, not the
+parentheses. The parentheses are optional except in the empty tuple case, or
+when they are needed to avoid syntactic ambiguity.
+""")
+print("""We can also use collections.namedtuple, which is a tuple subclass used
+to create tuple-like objects that have fields accessible by attribute lookup as
+well as being indexable and interable.
+""")
+
+Point = namedtuple("Point", ["x", "y"])
+
+p = Point(11, y=22)
+
+print("p:", p)
+
+print("p.x + p.y:", p.x + p.y)
+
+print("p[0] + p[1]:", p[0] + p[1])
+
+print("""Ranges:
+The range type represents an immutable sequence of numbers and is commonly used
+for looping a specific number of times in for loops.
+""")
+print("""The advantage of the range type over a regular list or tuple is that a
+range object will always take the same amount of memory, no matter the size of
+the range it represents as it only stores the start, stop and step values,
+calculating individual items and subranges as needed
+""")
