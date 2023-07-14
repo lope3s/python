@@ -18,13 +18,15 @@ def get_contacts_data():
 
 def get_action():
     print("Select one of the following options:")
-    for key in range(options):
-        print(options[key])
+    for key in options:
+        print(f'{key}) {options[key]}')
 
-    selected_action = input('\nYour choice: ')
+    selected_action = ''
 
-    if selected_action not in options:
+    while selected_action not in options:
+        selected_action = input('\nYour choice: ')
 
+    return int(selected_action)
 
 
 def store_contact(agenda, contact_data):
@@ -42,4 +44,18 @@ def store_contact(agenda, contact_data):
 if __name__ == "__main__":
     run = True
 
+    phonebook = []
+
     while run:
+        action = get_action()
+
+        if action == 4:
+            run = False
+            print("Bye!")
+            continue
+
+        if action == 1:
+            contact_data = get_contacts_data()
+            store_contact(phonebook, contact_data)
+
+    print(phonebook)
