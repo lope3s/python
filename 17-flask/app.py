@@ -31,7 +31,7 @@ def user_id (user, id):
 # if a route is defined with a trailing slash, accessing the route without
 # the trailing slash will redirect to the same path with the trailing
 # slash.
-# if a is defined without a trailing slash, acessing the route with the
+# if it is defined without a trailing slash, acessing the route with the
 # trailing slash will produce a 404 error.
 
 # It's also possible to build the url of a specific function with
@@ -108,9 +108,9 @@ def request_post():
 
 # The request object
 # 1. The current request method is available by using request.method.
-# 2. To access form data (data transmitted in a POST or PUT) you can use
-#    request.form. If the key doesn't exist a special KeyError is raised
-#    If you don't catch it, a 400 Bad Request error page is shown.
+# 2. To access form data you can use request.form. If the key doesn't 
+#    exist a special KeyError is raised. If you don't catch it, a 400 Bad 
+#    Request error page is shown.
 # 3. To access query params you can use request.args dictionary.
 # 4. You can access files sent in a request by using request.files. It's
 #    a dictionary. Each file behaves like a standard file object with the
@@ -186,7 +186,7 @@ def logout():
 
 # A note on cookie-based sessions: Flask will take the values you put into 
 # the session object and serialize them into a cookie. If you are finding 
-# some values do not persist across requests, cookies are indeed enabled,
-# and you are not getting a clear error message, check the size of the 
-# cookie in your page responses compared to the size supported by web 
-# browsers.
+# some values do not persist across requests, check if cookies are indeed 
+# enabled, and you are not getting a clear error message, check the size 
+# of the cookie in your page responses compared to the size supported by 
+# web browsers.

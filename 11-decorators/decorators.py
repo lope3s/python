@@ -10,7 +10,7 @@
 
 # A decorator is a high order function that expects a function as input and
 # return a function as result.
-# The decored function (function received as argument) is modified by the
+# The decorated function (function received as argument) is modified by the
 # decorator closure, which is then returned as a new function.
 
 import functools
