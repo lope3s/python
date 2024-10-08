@@ -63,8 +63,9 @@ class Animal:
 
 
 class Lion(Animal):
-    def __init__(self, name):
-        super()
+    def __init__(self, group, name):
+        super().__init__(group)
+        # you could also: Animal.__init__(self, group)
         self.name = name
 
 # An overriding method in a derived class may want to extend rather than simply
@@ -82,7 +83,9 @@ class Lion(Animal):
 
 
 class Wolf(Animal, Dog):
-    def __init__(self, age):
+    def __init__(self, group, name, age):
+        Animal.__init__(self, group)
+        Dog.__init__(self, name)
         self.age = age
 
 # You can think of the search for attributes inherited from a parent class as
@@ -125,3 +128,50 @@ class MappingSubclass(Mapping):
 # The above example would work even if MappingSubclass were to introduce a
 # __update identifier since it is replaced with _Mapping__update in the Mapping
 # class and _MappingSubclass__update in the MappingSubclass class respectively.
+
+
+class Employee:
+    raise_amount = 1.04
+
+    def __init__(self, name, last_name, pay):
+        self.name = name
+        self.last_name = last_name
+        self.pay = pay
+
+    # class methods can be defined with decorators.
+    # class methods receive the base class instead of an instance of the class.
+    @classmethod
+    def set_raise_amt(cls, amount):
+        cls.raise_amount = amount
+
+    # class methods can also be used as alternative constructors.
+    @classmethod
+    def from_string(cls, emp_str):
+        first, last, pay = emp_str.split('-')
+        return cls(first, last, pay)
+
+    # static methods doesn't receive any default arguments.
+    @staticmethod
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+
+
+# Accessors in python are defined with the use of decorators:
+class Person:
+    def __init__(self, first, last):
+        self.first = first
+        self.last = last
+
+    # to define a getter we use the @property decorator
+    @property
+    def fullname(self):
+        return '{} {}'.format(self.first, self.last)
+
+    # to define a setter we use the @property_name.setter decorator
+    @fullname.setter
+    def fullname(self, name):
+        fisrt, last = name.split(' ')
+        self.first = fisrt
+        self.last = last
