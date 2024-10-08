@@ -1,0 +1,3 @@
+[x] - abstract classes
+[x] - class methods, static methods, getters, setters
+[ ] - what is the Global Interpreter Lock (GIL).

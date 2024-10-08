@@ -17,6 +17,8 @@ into bytes literals using the appropriate escape sequence.
 
 print("bytes(10):", bytes(10))
 
+print("bytes('asdf', 'utf-8'):", bytes("asdf", 'utf-8'))
+
 print("""
 Bytearray Objects:
 """)
